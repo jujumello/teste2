@@ -1,0 +1,78 @@
+/*Vamos começar zerando o margin e padding para todos os navegadores,
+colocaremos um estilo de texto para o nosso texto do menu e removeremos
+os bullets da lista. Depois vamos definir uma borda e colocaremos
+o float:"left"; para que as bordas fiquem certinhas.*/
+
+*{margin:0;
+padding:0;
+}
+
+body{
+	margin-top:20px;
+}
+/*para centralizar o menu na tela */
+
+div{
+	width:600px;
+	margin:0 auto;
+}
+	
+.menu{
+		list-style:none;
+		border: 1px solid #c0c0c0;
+		float:left;
+		font-family: arial, helvitia, sans-serif;
+		font-size:15px; 
+	}
+	
+	 /*agora vamos estabilizar os itens do menu. Utilizaremos o position: relative;
+	 para que futuramente possemos posicionar o submenu.*/
+	 
+.menu li{
+		 position:relative;
+		 float:left;
+		 border-right:1px solid #c0c0c0;
+		 /*text-shadow:1px 2px 4px red;*/
+	 }
+.menu li a {
+		 color:#333333;
+		 text-decoration: none;
+		 padding:5px 10px;
+		 /*quando não define o modo de exebição pode ocorrer falha indesejavel ao exibir o elemento*/
+		 display:block;
+		 /*remover o display block*/
+	 }
+.menu li a:hover{
+		 background:#333333;
+		 color:#ffffff;
+	 }
+	 
+	 /*agora vamos comecar  a trabalhar com o submenu, vamos comecar defindo a
+	sua posição com absoluta(position:absolute;),para que os itens do submenunao ultrapassem o seu pai que ele nao interfira no fluxo
+	dos elementos do menu.
+	vamos tambem definir cores de  fund e esconder o submenu co display:nome;*/
+	
+.menu ul{
+		position:absolute;
+		top:25px;
+		left:0px;
+		background-color:#fffff;
+		display:none;
+	}
+		
+		/* como podemos ver, o noso menu est quase pronto, dogamos que uns 80%,
+		faltando apenas exibir o submenu, vamos ver como fazemos isso? */
+		
+.menu li:hover ul{ 
+		display: block;
+	} 
+	/*    */
+	
+.menu li ul li {
+		border:1px solid #c0c0c0;
+		/* display:block;*/
+		
+		list-style:none;
+		width:150px;
+}		
+		 
